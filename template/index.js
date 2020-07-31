@@ -119,7 +119,7 @@ module.exports = {
     // if (ctx.config.install == false) {
     //   console.log(chalk`  $ {cyan npm install} {gray # or yarn}`)
     // }
-    // console.log(chalk`  $ {cyan <%= '${config.config.install ? config.config.install : \'npm\'}' %> test}`)
+    // console.log(chalk`  $ {cyan <%= '${ctx.config.install ? ctx.config.install : \'npm\'}' %> test}`)
     // console.log('\nHappy hacking :)\n')
   }<% } if (features.includes('complete') && complete === 'message') { %>,
   // TODO: complete message

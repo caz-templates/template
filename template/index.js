@@ -17,45 +17,45 @@ module.exports = {
   }<% } if (features.includes('prompts')) { %>,
   prompts: [
     {
-      type: 'text',
       name: 'name',
+      type: 'text',
       message: 'Project name'
     },
     {
-      type: 'text',
       name: 'version',
+      type: 'text',
       message: 'Project version'
     },
     {
-      type: 'text',
       name: 'description',
+      type: 'text',
       message: 'Project description',
       initial: (prev, values) => `A template for creating <%= '${values.name}' %> apps.`
     },
     {
-      type: 'text',
       name: 'author',
+      type: 'text',
       message: 'Project author name'
     },
     {
-      type: 'text',
       name: 'email',
+      type: 'text',
       message: 'Project author email'
     },
     {
-      type: 'text',
       name: 'url',
+      type: 'text',
       message: 'Project author url'
     },
     {
-      type: 'text',
       name: 'github',
+      type: 'text',
       message: 'GitHub username or organization',
       initial: 'caz-templates'
     },
     {
-      type: 'multiselect',
       name: 'features',
+      type: 'multiselect',
       message: 'Choose the features you need',
       instructions: false,
       choices: [
@@ -64,14 +64,14 @@ module.exports = {
       ]
     },
     {
-      type: 'confirm',
       name: 'install',
+      type: 'confirm',
       message: 'Install dependencies',
       initial: true
     },
     {
-      type: prev => prev ? 'select' : null,
       name: 'pm',
+      type: prev => prev ? 'select' : null,
       message: 'Package manager',
       hint: ' ',
       choices: [

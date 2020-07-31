@@ -17,51 +17,51 @@ module.exports = {
   },
   prompts: [
     {
-      type: 'text',
       name: 'name',
+      type: 'text',
       message: 'Template name'
     },
     {
-      type: 'text',
       name: 'version',
+      type: 'text',
       message: 'Template version'
     },
     {
-      type: 'text',
       name: 'description',
+      type: 'text',
       message: 'Template description',
       initial: (prev, values) => `A template for creating ${values.name} apps.`
     },
     {
-      type: 'text',
       name: 'author',
+      type: 'text',
       message: 'Template author name'
     },
     {
-      type: 'text',
       name: 'email',
+      type: 'text',
       message: 'Template author email'
     },
     {
-      type: 'text',
       name: 'url',
+      type: 'text',
       message: 'Template author url'
     },
     {
-      type: 'text',
       name: 'github',
+      type: 'text',
       message: 'GitHub username or organization',
       initial: 'caz-templates'
     },
     {
-      type: 'text',
       name: 'source',
+      type: 'text',
       message: 'Template source directory name',
       initial: 'template'
     },
     {
-      type: 'multiselect',
       name: 'features',
+      type: 'multiselect',
       message: 'Choose the features you need',
       instructions: false,
       choices: [
@@ -80,8 +80,8 @@ module.exports = {
       ]
     },
     {
-      type: prev => prev.includes('complete') ? 'select' : null,
       name: 'complete',
+      type: prev => prev.includes('complete') ? 'select' : null,
       message: 'Complete type',
       hint: ' ',
       choices: [
@@ -90,14 +90,14 @@ module.exports = {
       ]
     },
     {
-      type: 'confirm',
       name: 'install',
+      type: 'confirm',
       message: 'Install dependencies',
       initial: true
     },
     {
-      type: prev => prev ? 'select' : null,
       name: 'pm',
+      type: prev => prev ? 'select' : null,
       message: 'Package manager',
       hint: ' ',
       choices: [

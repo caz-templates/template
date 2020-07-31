@@ -65,18 +65,18 @@ module.exports = {
       message: 'Choose the features you need',
       instructions: false,
       choices: [
-        { name: 'Custom metadata', value: 'metadata' },
-        { name: 'Custom prompts', value: 'prompts', selected: true },
-        { name: 'Custom filters', value: 'filters' },
-        { name: 'Custom helpers', value: 'helpers' },
-        { name: 'Custom deps install', value: 'install' },
-        { name: 'Custom git init', value: 'init' },
-        { name: 'Custom setup hook', value: 'setup' },
-        { name: 'Custom prepare hook', value: 'prepare' },
-        { name: 'Custom emit hook', value: 'emit' },
-        { name: 'Custom complete', value: 'complete', selected: true },
-        { name: 'Additional docs', value: 'docs' },
-        { name: 'Automatic test', value: 'test', selected: true }
+        { title: 'Custom metadata', value: 'metadata' },
+        { title: 'Custom prompts', value: 'prompts', selected: true },
+        { title: 'Custom filters', value: 'filters' },
+        { title: 'Custom helpers', value: 'helpers' },
+        { title: 'Custom deps install', value: 'install' },
+        { title: 'Custom git init', value: 'init' },
+        { title: 'Custom setup hook', value: 'setup' },
+        { title: 'Custom prepare hook', value: 'prepare' },
+        { title: 'Custom emit hook', value: 'emit' },
+        { title: 'Custom complete', value: 'complete', selected: true },
+        { title: 'Additional docs', value: 'docs' },
+        { title: 'Automatic test', value: 'test', selected: true }
       ]
     },
     {
@@ -85,8 +85,8 @@ module.exports = {
       message: 'Complete type',
       hint: ' ',
       choices: [
-        { name: 'Callback', value: 'callback' },
-        { name: 'Message', value: 'message' }
+        { title: 'Callback', value: 'callback' },
+        { title: 'Message', value: 'message' }
       ]
     },
     {

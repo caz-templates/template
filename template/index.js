@@ -59,8 +59,8 @@ module.exports = {
       message: 'Choose the features you need',
       instructions: false,
       choices: [
-        { name: 'Feature1', value: 'feature1' },
-        { name: 'Feature2', value: 'feature2', selected: true }
+        { title: 'Feature1', value: 'feature1' },
+        { title: 'Feature2', value: 'feature2', selected: true }
       ]
     },
     {

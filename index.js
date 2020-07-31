@@ -1,6 +1,7 @@
+// @ts-check
+
 // !!! Sharing the dependencies of caz
 module.paths = module.parent.paths
-//
 
 const path = require('path')
 const chalk = require('chalk')

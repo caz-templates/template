@@ -74,7 +74,7 @@ module.exports = {
         { name: 'Custom setup hook', value: 'setup' },
         { name: 'Custom prepare hook', value: 'prepare' },
         { name: 'Custom emit hook', value: 'emit' },
-        { name: 'Custom complete', value: 'complete' },
+        { name: 'Custom complete', value: 'complete', selected: true },
         { name: 'Additional docs', value: 'docs' },
         { name: 'Automatic test', value: 'test', selected: true }
       ]
@@ -85,8 +85,8 @@ module.exports = {
       message: 'Complete type',
       hint: ' ',
       choices: [
-        { name: 'Message', value: 'message' },
-        { name: 'Callback', value: 'callback' }
+        { name: 'Callback', value: 'callback' },
+        { name: 'Message', value: 'message' }
       ]
     },
     {

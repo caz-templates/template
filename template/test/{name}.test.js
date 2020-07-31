@@ -3,7 +3,7 @@ const path = require('path')
 const { default: caz, inject } = require('caz')
 
 const template = path.join(__dirname, '..')
-const project = path.join(__dirname, 'dist')
+const project = path.join(__dirname, '..', 'dist')
 
 beforeAll(async () => {
   jest.spyOn(console, 'log').mockImplementation()

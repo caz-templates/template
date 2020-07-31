@@ -1,4 +1,4 @@
-// // !!! Sharing the dependencies of zce-cli
+// // !!! Sharing the dependencies of caz
 // module.paths = module.parent.paths
 
 // const path = require('path')
@@ -13,7 +13,7 @@ module.exports = {
   source: '<%= source %>'<% } if (features.includes('metadata')) { %>,
   metadata: {
     // TODO: predefined template metadata
-    // e.g. year: new Date().getFullYear()
+    // year: new Date().getFullYear()
   }<% } if (features.includes('prompts')) { %>,
   prompts: [
     {
@@ -90,7 +90,7 @@ module.exports = {
   }<% } if (features.includes('helpers')) { %>,
   helpers: {
     // TODO: custom helpers
-    // e.g. upper: str => str.toUpperCase()
+    // upper: str => str.toUpperCase()
   }<% } if (features.includes('install')) { %>,
   // TODO: install by npm / yarn
   install: 'npm'<% } if (features.includes('init')) { %>,
@@ -98,12 +98,15 @@ module.exports = {
   init: true<% } if (features.includes('setup')) { %>,
   setup: async ctx => {
     // TODO: custom setup hook
+    // ctx.config.install = ctx.answers.pm
   }<% } if (features.includes('prepare')) { %>,
   prepare: async ctx => {
     // TODO: custom prepare hook
+    // console.log('prepare', ctx)
   }<% } if (features.includes('emit')) { %>,
   emit: async ctx => {
     // TODO: custom emit hook
+    // console.log('emit', ctx)
   }<% } if (features.includes('complete') && complete === 'callback') { %>,
   complete: async ctx => {
     // TODO: generate complete callback

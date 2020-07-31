@@ -1,4 +1,4 @@
-// !!! Sharing the dependencies of zce-cli
+// !!! Sharing the dependencies of caz
 module.paths = module.parent.paths
 //
 

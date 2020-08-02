@@ -1,8 +1,8 @@
 .DS_Store
 
-node_modules
+node_modules<% if (features.includes('test')) { %>
 
-dist
+dist<% } %>
 
 package-lock.json
 yarn.lock

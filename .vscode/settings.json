@@ -2,6 +2,6 @@
 // that the path where the project is located cannot contain `template`
 {
   "files.associations": {
-    "**/template/**": "ejs"
+    "**/template/**": "html"
   }
 }

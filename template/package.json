@@ -14,7 +14,18 @@
   "author": "<%= author %> <<%= email %>> (<%= url %>)",
   "main": "index.js",
   "scripts": {
-    "test": "standard --fix<% if (features.includes('test')) { %> && jest<% } %>"
+    "test": "standard --fix<%= features.includes('test') ? ' && jest' : '' %>"
+  },<% if (features.includes('test')) { %>
+  "jest": {
+    "testTimeout": 30000,
+    "modulePathIgnorePatterns": [
+      "<rootDir>/template"
+    ]
+  },<% } %>
+  "renovate": {
+    "extends": [
+      "zce"
+    ]
   },
   "standard": {<% if (features.includes('test')) { %>
     "env": [
@@ -23,15 +34,10 @@
     "ignore": [
       "<%= source %>"
     ]
-  },<% if (features.includes('test')) { %>
-  "jest": {
-    "modulePathIgnorePatterns": [
-      "<rootDir>/template"
-    ]
-  },<% } %>
+  },
   "devDependencies": {<% if (features.includes('test')) { %>
-    "caz": "0.0.0-alpha.9",
-    "jest": "^26.2.1",<% } %>
-    "standard": "^14.3.4"
+    "caz": "0.0.0-alpha.10",
+    "jest": "26.2.2",<% } %>
+    "standard": "14.3.4"
   }
 }

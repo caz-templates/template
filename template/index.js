@@ -5,7 +5,6 @@
 
 // const path = require('path')
 // const chalk = require('chalk')
-// const caz = require('caz')
 const pkg = require('./package.json')
 
 /** @type {import('caz').Template} */
@@ -18,80 +17,82 @@ module.exports = {
     // year: new Date().getFullYear()
   }<% } if (features.includes('prompts')) { %>,
   prompts: [
-    {
-      name: 'name',
-      type: 'text',
-      message: 'Project name'
-    },
-    {
-      name: 'version',
-      type: 'text',
-      message: 'Project version'
-    },
-    {
-      name: 'description',
-      type: 'text',
-      message: 'Project description',
-      initial: (prev, values) => `A template for creating <%= '${values.name}' %> apps.`
-    },
-    {
-      name: 'author',
-      type: 'text',
-      message: 'Project author name'
-    },
-    {
-      name: 'email',
-      type: 'text',
-      message: 'Project author email'
-    },
-    {
-      name: 'url',
-      type: 'text',
-      message: 'Project author url'
-    },
-    {
-      name: 'github',
-      type: 'text',
-      message: 'GitHub username or organization',
-      initial: 'caz-templates'
-    },
-    {
-      name: 'features',
-      type: 'multiselect',
-      message: 'Choose the features you need',
-      instructions: false,
-      choices: [
-        { title: 'Feature1', value: 'feature1' },
-        { title: 'Feature2', value: 'feature2', selected: true }
-      ]
-    },
-    {
-      name: 'install',
-      type: 'confirm',
-      message: 'Install dependencies',
-      initial: true
-    },
-    {
-      name: 'pm',
-      type: prev => prev ? 'select' : null,
-      message: 'Package manager',
-      hint: ' ',
-      choices: [
-        { title: 'npm', value: 'npm' },
-        { title: 'yarn', value: 'yarn' },
-        { title: 'pnpm', value: 'pnpm' }
-      ]
-    }
+    // TODO: custom template prompts
+    // {
+    //   name: 'name',
+    //   type: 'text',
+    //   message: 'Project name'
+    // },
+    // {
+    //   name: 'version',
+    //   type: 'text',
+    //   message: 'Project version'
+    // },
+    // {
+    //   name: 'description',
+    //   type: 'text',
+    //   message: 'Project description',
+    //   /** @param {any} _ @param {{ name: string }} values */
+    //   initial: (_, values) => `A template for creating <%= '${values.name}' %> apps.`
+    // },
+    // {
+    //   name: 'author',
+    //   type: 'text',
+    //   message: 'Project author name'
+    // },
+    // {
+    //   name: 'email',
+    //   type: 'text',
+    //   message: 'Project author email'
+    // },
+    // {
+    //   name: 'url',
+    //   type: 'text',
+    //   message: 'Project author url'
+    // },
+    // {
+    //   name: 'github',
+    //   type: 'text',
+    //   message: 'GitHub username or organization',
+    //   initial: 'caz-templates'
+    // },
+    // {
+    //   name: 'features',
+    //   type: 'multiselect',
+    //   message: 'Choose the features you need',
+    //   instructions: false,
+    //   choices: [
+    //     { title: 'Feature1', value: 'feature1' },
+    //     { title: 'Feature2', value: 'feature2', selected: true }
+    //   ]
+    // },
+    // {
+    //   name: 'install',
+    //   type: 'confirm',
+    //   message: 'Install dependencies',
+    //   initial: true
+    // },
+    // {
+    //   name: 'pm',
+    //   type: prev => process.env.NODE_ENV === 'test' || prev ? 'select' : null,
+    //   message: 'Package manager',
+    //   hint: ' ',
+    //   choices: [
+    //     { title: 'npm', value: 'npm' },
+    //     { title: 'yarn', value: 'yarn' },
+    //     { title: 'pnpm', value: 'pnpm' }
+    //   ]
+    // }
   ]<% } if (features.includes('filters')) { %>,
   filters: {
-    // TODO: custom filters
+    // TODO: custom template filters
     // /** @param {{ features: string[] }} answers */
     // 'test/**': answers => answers.features.includes('test'),
     // /** @param {{ features: string[] }} answers */
     // '.travis.yml': answers => answers.features.includes('test')
   }<% } if (features.includes('helpers')) { %>,
   helpers: {
-    // TODO: custom helpers
+    // TODO: custom template helpers
     // upper: str => str.toUpperCase()
   }<% } if (features.includes('install')) { %>,
   // TODO: install by npm / yarn
@@ -99,31 +100,31 @@ module.exports = {
   // TODO: git init
   init: true<% } if (features.includes('setup')) { %>,
   setup: async ctx => {
-    // TODO: custom setup hook
-    // ctx.config.install = ctx.answers.pm
+    // TODO: custom template setup hook
+    // ctx.config.install = ctx.answers.install && ctx.answers.pm
   }<% } if (features.includes('prepare')) { %>,
   prepare: async ctx => {
-    // TODO: custom prepare hook
+    // TODO: custom template prepare hook
     // console.log('prepare', ctx)
   }<% } if (features.includes('emit')) { %>,
   emit: async ctx => {
-    // TODO: custom emit hook
+    // TODO: custom template emit hook
     // console.log('emit', ctx)
   }<% } if (features.includes('complete') && complete === 'callback') { %>,
   complete: async ctx => {
-    // TODO: generate complete callback
+    // TODO: custom complete callback
     // console.clear()
-    // console.log(chalk`Created a new project in {cyan <%= '${ctx.project}' %>} by the {blue <%= '${caz.file.tildify(ctx.template)}' %>} template.\n`)
+    // console.log(chalk`Created a new project in {cyan <%= '${ctx.project}' %> } by the {blue <%= '${ctx.template}' %> } template.\n`)
     // console.log('Getting Started:')
     // if (ctx.dest !== process.cwd()) {
-    //   console.log(chalk`  $ {cyan cd <%= '${path.relative(process.cwd(), ctx.dest)}' %>}`)
+    //   console.log(chalk`  $ {cyan cd <%= '${path.relative(process.cwd(), ctx.dest)}' %> }`)
     // }
-    // if (ctx.config.install == false) {
+    // if (ctx.config.install === false) {
     //   console.log(chalk`  $ {cyan npm install} {gray # or yarn}`)
     // }
-    // console.log(chalk`  $ {cyan <%= '${ctx.config.install ? ctx.config.install : \'npm\'}' %> test}`)
+    // console.log(chalk`  $ {cyan <%= '${ctx.config.install ? ctx.config.install : \'npm\'}' %>  test}`)
     // console.log('\nHappy hacking :)\n')
   }<% } if (features.includes('complete') && complete === 'message') { %>,
-  // TODO: complete message
+  // TODO: custom complete message
   complete: '\nHappy hacking :)\n'<% } %>
 }

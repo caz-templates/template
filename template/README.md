@@ -9,30 +9,33 @@
 
 ## Usage
 
-Prerequisites: [Node.js](https://nodejs.org) (>= 10.12, 12.10 preferred), [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.20) and [Git](https://git-scm.com).
+Prerequisites: [Node.js](https://nodejs.org) (>= 10.17, 12.10 preferred), [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.20) and [Git](https://git-scm.com).
 
 ```shell
-# Init <%= name %>s through this <%= name %>
+# create <%= name %>s through this
 $ npx caz <%= name %> my-<%= name %>
 
+# enter generated directory
 $ cd my-<%= name %>
 
-# Running test if you choose test features
-$ npm test # or yarn test
+# running test if you choose test features
+$ npm test # or `yarn test`
 ```
 
-Or use the global `caz`
+or
 
 ```shell
 # Install the `caz` globally
 $ npm install caz --global # or `yarn global add caz`
 
+# create <%= name %>s through this
 $ caz <%= name %> my-<%= name %>
 
-$ cd my-<%= name %><% if (features.includes('test')) { %>
+# enter generated directory
+$ cd my-<%= name %>
 
-# Running test if you choose test features
-$ npm test # or yarn test<% } %>
+# running test if you choose test features
+$ npm test # or `yarn test`
 ```
 
 ## Contributing

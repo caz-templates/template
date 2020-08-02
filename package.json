@@ -36,12 +36,12 @@
     ]
   },
   "dependencies": {
-    "caz": "0.0.0-alpha.10",
+    "caz": "0.0.0",
     "jest": "26.2.2",
     "standard": "14.3.4"
   },
   "devDependencies": {
-    "caz": "0.0.0-alpha.10",
+    "caz": "0.0.0",
     "jest": "26.2.2",
     "standard": "14.3.4"
   }

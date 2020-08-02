@@ -114,15 +114,15 @@ module.exports = {
   complete: async ctx => {
     // TODO: custom complete callback
     // console.clear()
-    // console.log(chalk`Created a new project in {cyan <%= '${ctx.project}' %> } by the {blue <%= '${ctx.template}' %> } template.\n`)
+    // console.log(chalk`Created a new project in {cyan <%= '${ctx.project}' %>} by the {blue <%= '${ctx.template}' %>} template.\n`)
     // console.log('Getting Started:')
     // if (ctx.dest !== process.cwd()) {
-    //   console.log(chalk`  $ {cyan cd <%= '${path.relative(process.cwd(), ctx.dest)}' %> }`)
+    //   console.log(chalk`  $ {cyan cd <%= '${path.relative(process.cwd(), ctx.dest)}' %>}`)
     // }
     // if (ctx.config.install === false) {
     //   console.log(chalk`  $ {cyan npm install} {gray # or yarn}`)
     // }
-    // console.log(chalk`  $ {cyan <%= '${ctx.config.install ? ctx.config.install : \'npm\'}' %>  test}`)
+    // console.log(chalk`  $ {cyan <%= '${ctx.config.install ? ctx.config.install : \'npm\'}' %> test}`)
     // console.log('\nHappy hacking :)\n')
   }<% } if (features.includes('complete') && complete === 'message') { %>,
   // TODO: custom complete message

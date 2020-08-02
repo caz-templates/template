@@ -55,11 +55,11 @@ $ npm test # or `yarn test`
 
 
 
-[travis-img]: https://img.shields.io/travis/caz-templates/template.svg
+[travis-img]: https://img.shields.io/travis/caz-templates/template
 [travis-url]: https://travis-ci.org/caz-templates/template
-[dependency-img]: https://img.shields.io/david/caz-templates/template.svg
+[dependency-img]: https://img.shields.io/david/caz-templates/template
 [dependency-url]: https://david-dm.org/caz-templates/template
-[devdependency-img]: https://img.shields.io/david/dev/caz-templates/template.svg
+[devdependency-img]: https://img.shields.io/david/dev/caz-templates/template
 [devdependency-url]: https://david-dm.org/caz-templates/template?type=dev
-[style-img]: https://img.shields.io/badge/code_style-standard-brightgreen.svg
+[style-img]: https://img.shields.io/badge/code_style-standard-brightgreen
 [style-url]: https://standardjs.com

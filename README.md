@@ -5,20 +5,21 @@
 [![devDependency Status][devdependency-img]][devdependency-url]
 [![Code Style][style-img]][style-url]
 
-> A [caz](https://github.com/zce/caz) template for creating [caz](https://github.com/zce/caz) templates
+> A template for creating [caz](https://github.com/zce/caz) templates.
 
 ## Usage
 
-Prerequisites: [Node.js](https://nodejs.org) (>= 10.12, 12.10 preferred), [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.20) and [Git](https://git-scm.com).
+Prerequisites: [Node.js](https://nodejs.org) (>= 10.17, 12.10 preferred), [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.20) and [Git](https://git-scm.com).
 
 ```shell
-# Init templates through this template
+# create templates through this
 $ npx caz template my-template
 
+# enter generated directory
 $ cd my-template
 
-# Running test if you choose test features
-$ npm test # or yarn test
+# running test if you choose test features
+$ npm test # or `yarn test`
 ```
 
 or
@@ -27,12 +28,14 @@ or
 # Install the `caz` globally
 $ npm install caz --global # or `yarn global add caz`
 
+# create templates through this
 $ caz template my-template
 
+# enter generated directory
 $ cd my-template
 
-# Running test if you choose test features
-$ npm test # or yarn test
+# running test if you choose test features
+$ npm test # or `yarn test`
 ```
 
 ## Contributing

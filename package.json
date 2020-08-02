@@ -29,6 +29,11 @@
       "<rootDir>/template"
     ]
   },
+  "renovate": {
+    "extends": [
+      "zce"
+    ]
+  },
   "dependencies": {
     "caz": "0.0.0-alpha.9",
     "jest": "^26.2.1",

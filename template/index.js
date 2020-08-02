@@ -32,8 +32,7 @@ module.exports = {
     //   name: 'description',
     //   type: 'text',
     //   message: 'Project description',
-    //   /** @param {any} _ @param {{ name: string }} values */
-    //   initial: (_, values) => `A template for creating <%= '${values.name}' %> apps.`
+    //   initial: 'Awesome <%= name %> apps.'
     // },
     // {
     //   name: 'author',

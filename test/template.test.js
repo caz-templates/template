@@ -27,7 +27,8 @@ test('minimal', async () => {
     'template',
     [],
     'message',
-    false
+    false,
+    'npm'
   ])
 
   const project = path.join(temp, 'minimal')

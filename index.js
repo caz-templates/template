@@ -5,8 +5,9 @@ module.paths = module.parent.paths
 
 const path = require('path')
 const chalk = require('chalk')
-const caz = require('caz')
 const pkg = require('./package.json')
+
+const isTest = process.env.NODE_ENV === 'test'
 
 /** @type {import('caz').Template} */
 module.exports = {
@@ -31,7 +32,8 @@ module.exports = {
       name: 'description',
       type: 'text',
       message: 'Template description',
-      initial: (prev, values) => `A template for creating ${values.name} apps.`
+      /** @param {any} _ @param {{ name: string }} values */
+      initial: (_, values) => `A template for creating ${values.name} apps.`
     },
     {
       name: 'author',
@@ -82,7 +84,7 @@ module.exports = {
     },
     {
       name: 'complete',
-      type: prev => prev.includes('complete') ? 'select' : null,
+      type: prev => isTest || prev.includes('complete') ? 'select' : null,
       message: 'Complete type',
       hint: ' ',
       choices: [
@@ -98,7 +100,7 @@ module.exports = {
     },
     {
       name: 'pm',
-      type: prev => prev ? 'select' : null,
+      type: prev => isTest || prev ? 'select' : null,
       message: 'Package manager',
       hint: ' ',
       choices: [
@@ -117,26 +119,20 @@ module.exports = {
     '.travis.yml': answers => answers.features.includes('test')
   },
   init: true,
-  prepare: ctx => {
-    ctx.config.install = ctx.answers.pm
+  prepare: async ctx => {
+    ctx.config.install = ctx.answers.install && ctx.answers.pm
   },
-  complete: ctx => {
+  complete: async ctx => {
     console.clear()
-
-    console.log(chalk`Created a new project in {cyan ${ctx.project}} by the {blue ${caz.file.tildify(ctx.template)}} template.\n`)
-
+    console.log(chalk`Created a new project in {cyan ${ctx.project}} by the {blue ${ctx.template}} template.\n`)
     console.log('Getting Started:')
-
     if (ctx.dest !== process.cwd()) {
       console.log(chalk`  $ {cyan cd ${path.relative(process.cwd(), ctx.dest)}}`)
     }
-
     if (ctx.config.install === false) {
       console.log(chalk`  $ {cyan npm install} {gray # or yarn}`)
     }
-
     console.log(chalk`  $ {cyan ${ctx.config.install ? ctx.config.install : 'npm'} test}`)
-
     console.log('\nHappy hacking :)\n')
   }
 }

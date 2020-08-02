@@ -16,15 +16,8 @@
   "scripts": {
     "test": "standard --fix && jest"
   },
-  "standard": {
-    "env": [
-      "jest"
-    ],
-    "ignore": [
-      "template"
-    ]
-  },
   "jest": {
+    "testTimeout": 30000,
     "modulePathIgnorePatterns": [
       "<rootDir>/template"
     ]
@@ -34,14 +27,22 @@
       "zce"
     ]
   },
+  "standard": {
+    "env": [
+      "jest"
+    ],
+    "ignore": [
+      "template"
+    ]
+  },
   "dependencies": {
-    "caz": "0.0.0-alpha.9",
-    "jest": "^26.2.1",
-    "standard": "^14.3.4"
+    "caz": "0.0.0-alpha.10",
+    "jest": "26.2.2",
+    "standard": "14.3.4"
   },
   "devDependencies": {
-    "caz": "0.0.0-alpha.9",
-    "jest": "^26.2.1",
-    "standard": "^14.3.4"
+    "caz": "0.0.0-alpha.10",
+    "jest": "26.2.2",
+    "standard": "14.3.4"
   }
 }

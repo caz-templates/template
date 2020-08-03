@@ -5,13 +5,12 @@ module.paths = module.parent.paths
 
 const path = require('path')
 const chalk = require('chalk')
-const pkg = require('./package.json')
+const { name, version } = require('./package.json')
 
 /** @type {import('caz').Template} */
 module.exports = {
-  name: pkg.name,
-  version: pkg.version,
-  source: 'template',
+  name,
+  version,
   metadata: {
     year: new Date().getFullYear()
   },

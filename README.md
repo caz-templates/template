@@ -5,7 +5,7 @@
 [![devDependency Status][devdependency-img]][devdependency-url]
 [![Code Style][style-img]][style-url]
 
-> A template for creating [caz](https://github.com/zce/caz) templates.
+> A template for creating [CAZ](https://github.com/zce/caz) templates.
 
 ## Usage
 
@@ -22,7 +22,7 @@ $ cd my-template
 $ npm test # or `yarn test`
 ```
 
-or
+Or use globally installed CAZ:
 
 ```shell
 # Install the `caz` globally

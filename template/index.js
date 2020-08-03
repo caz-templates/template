@@ -90,7 +90,7 @@ module.exports = {
   }<% } if (features.includes('helpers')) { %>,
   helpers: {
     // TODO: custom template helpers
-    upper: str => str.toUpperCase()
+    upper: input => input.toUpperCase()
   }<% } if (features.includes('install')) { %>,
   // TODO: enable install by npm / yarn
   install: 'npm'<% } if (features.includes('init')) { %>,

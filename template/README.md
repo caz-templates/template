@@ -22,7 +22,7 @@ $ cd my-<%= name %>
 $ npm test # or `yarn test`
 ```
 
-or
+Or use globally installed CAZ:
 
 ```shell
 # Install the `caz` globally

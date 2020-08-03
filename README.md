@@ -51,7 +51,7 @@ $ npm test # or `yarn test`
 
 ## License
 
-[MIT](LICENSE) &copy; [汪磊](https://zce.me)
+[MIT](LICENSE) &copy; [zce](https://zce.me)
 
 
 

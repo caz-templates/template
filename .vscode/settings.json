@@ -1,5 +1,6 @@
 // Due to a problem with vscode, this configuration requires
 // that the path where the project is located cannot contain `template`
+// https://github.com/microsoft/vscode/issues/12805
 {
   "files.associations": {
     "**/template/**": "html"

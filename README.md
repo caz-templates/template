@@ -55,8 +55,8 @@ $ npm test # or `yarn test`
 
 
 
-[travis-img]: https://img.shields.io/travis/caz-templates/template
-[travis-url]: https://travis-ci.org/caz-templates/template
+[travis-img]: https://img.shields.io/travis/com/caz-templates/template
+[travis-url]: https://travis-ci.com/caz-templates/template
 [dependency-img]: https://img.shields.io/david/caz-templates/template
 [dependency-url]: https://david-dm.org/caz-templates/template
 [devdependency-img]: https://img.shields.io/david/dev/caz-templates/template

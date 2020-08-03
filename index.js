@@ -7,8 +7,6 @@ const path = require('path')
 const chalk = require('chalk')
 const pkg = require('./package.json')
 
-const isTest = process.env.NODE_ENV === 'test'
-
 /** @type {import('caz').Template} */
 module.exports = {
   name: pkg.name,
@@ -84,7 +82,7 @@ module.exports = {
     },
     {
       name: 'complete',
-      type: prev => isTest || prev.includes('complete') ? 'select' : null,
+      type: prev => process.env.NODE_ENV === 'test' || prev.includes('complete') ? 'select' : null,
       message: 'Complete type',
       hint: ' ',
       choices: [
@@ -100,7 +98,7 @@ module.exports = {
     },
     {
       name: 'pm',
-      type: prev => isTest || prev ? 'select' : null,
+      type: prev => process.env.NODE_ENV === 'test' || prev ? 'select' : null,
       message: 'Package manager',
       hint: ' ',
       choices: [

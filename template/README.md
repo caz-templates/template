@@ -12,7 +12,7 @@
 Prerequisites: [Node.js](https://nodejs.org) (>= 10.17, 12.10 preferred), [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.20) and [Git](https://git-scm.com).
 
 ```shell
-# create <%= name %>s through this
+# create <%= name %> apps through this
 $ npx caz <%= name %> my-<%= name %>
 
 # enter generated directory
@@ -28,7 +28,7 @@ or
 # Install the `caz` globally
 $ npm install caz --global # or `yarn global add caz`
 
-# create <%= name %>s through this
+# create <%= name %> apps through this
 $ caz <%= name %> my-<%= name %>
 
 # enter generated directory
@@ -55,8 +55,8 @@ $ npm test # or `yarn test`
 
 
 <% if (features.includes('test')) { %>
-[travis-img]: https://img.shields.io/travis/<%= github %>/<%= name %>
-[travis-url]: https://travis-ci.org/<%= github %>/<%= name %><% } %>
+[travis-img]: https://img.shields.io/travis/com/<%= github %>/<%= name %>
+[travis-url]: https://travis-ci.com/<%= github %>/<%= name %><% } %>
 [dependency-img]: https://img.shields.io/david/<%= github %>/<%= name %>
 [dependency-url]: https://david-dm.org/<%= github %>/<%= name %>
 [devdependency-img]: https://img.shields.io/david/dev/<%= github %>/<%= name %>

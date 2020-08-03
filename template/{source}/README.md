@@ -1,11 +1,11 @@
-# <%= "\<%= name %\>" %><% if (features.includes('prompts')) { %>
+# <%= '\<%= name %\>' %><% if (features.includes('prompts')) { %>
 
-> <%= "\<%= description %\>" %>
-<!--
-- version: <%= "\<%= version %\>" %>
-- author: <%= "\<%= author %\>" %>
-- email: <%= "\<%= email %\>" %>
-- url: <%= "\<%= url %\>" %>
-- github: <%= "\<%= github %\>" %>
-- features: <%= "\<%= features %\>" %>
- --><% } %>
+> <%= '\<%= description %\>' %>
+
+- version: <%= '\<%= version %\>' %>
+- author: <%= '\<%= author %\>' %>
+- email: <%= '\<%= email %\>' %>
+- url: <%= '\<%= url %\>' %>
+- github: <%= '\<%= github %\>' %>
+- features: <%= '\<%= features %\>' %>
+<% } %>

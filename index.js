@@ -70,7 +70,7 @@ module.exports = {
         { title: 'Custom prompts', value: 'prompts', selected: true },
         { title: 'Custom filters', value: 'filters' },
         { title: 'Custom helpers', value: 'helpers' },
-        { title: 'Custom deps install', value: 'install' },
+        { title: 'Custom install', value: 'install' },
         { title: 'Custom git init', value: 'init' },
         { title: 'Custom setup hook', value: 'setup' },
         { title: 'Custom prepare hook', value: 'prepare' },

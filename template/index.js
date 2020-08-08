@@ -98,15 +98,17 @@ module.exports = {
   init: true<% } if (features.includes('setup')) { %>,
   setup: async ctx => {
     // TODO: custom template setup hook
-    ctx.config.install = ctx.answers.install && ctx.answers.pm
+    console.log('setup', ctx)
   }<% } if (features.includes('prepare')) { %>,
   prepare: async ctx => {
     // TODO: custom template prepare hook
     console.log('prepare', ctx)
+    ctx.config.install = ctx.answers.install && ctx.answers.pm
   }<% } if (features.includes('emit')) { %>,
   emit: async ctx => {
     // TODO: custom template emit hook
     console.log('emit', ctx)
+    ctx.config.install = ctx.answers.install && ctx.answers.pm
   }<% } if (features.includes('complete') && complete === 'callback') { %>,
   complete: async ctx => {
     // TODO: custom complete callback

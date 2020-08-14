@@ -97,16 +97,16 @@ module.exports = {
   // TODO: enable git init
   init: true<% } if (features.includes('setup')) { %>,
   setup: async ctx => {
-    // TODO: custom template setup hook
+    // TODO: custom template setup hook, execute after template loaded & inquire completed.
     console.log('setup', ctx)
+    ctx.config.install = ctx.answers.install && ctx.answers.pm
   }<% } if (features.includes('prepare')) { %>,
   prepare: async ctx => {
-    // TODO: custom template prepare hook
+    // TODO: custom template prepare hook, execute after template files prepare, before rename & render.
     console.log('prepare', ctx)
-    ctx.config.install = ctx.answers.install && ctx.answers.pm
   }<% } if (features.includes('emit')) { %>,
   emit: async ctx => {
-    // TODO: custom template emit hook
+    // TODO: custom template emit hook, execute after all files emit to the destination.
     console.log('emit', ctx)
     ctx.config.install = ctx.answers.install && ctx.answers.pm
   }<% } if (features.includes('complete') && complete === 'callback') { %>,

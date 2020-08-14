@@ -116,7 +116,7 @@ module.exports = {
     '.travis.yml': answers => answers.features.includes('test')
   },
   init: true,
-  prepare: async ctx => {
+  setup: async ctx => {
     ctx.config.install = ctx.answers.install && ctx.answers.pm
   },
   complete: async ctx => {

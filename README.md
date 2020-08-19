@@ -38,6 +38,10 @@ $ cd my-template
 $ npm test # or `yarn test`
 ```
 
+## Todos
+
+- [ ] Scaffolding tool modules
+
 ## Contributing
 
 1. **Fork** it on GitHub!

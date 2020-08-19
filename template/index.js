@@ -108,7 +108,6 @@ module.exports = {
   emit: async ctx => {
     // TODO: custom template emit hook, execute after all files emit to the destination.
     console.log('emit', ctx)
-    ctx.config.install = ctx.answers.install && ctx.answers.pm
   }<% } if (features.includes('complete') && complete === 'callback') { %>,
   complete: async ctx => {
     // TODO: custom complete callback

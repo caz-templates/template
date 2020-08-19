@@ -8,4 +8,6 @@
 - url: <%= '\<%= url %\>' %>
 - github: <%= '\<%= github %\>' %>
 - features: <%= '\<%= features %\>' %>
+- year: <%= '\<%= year %\>' %>
+- upper: <%= '\<%= upper(name) %\>' %>
 <% } %>

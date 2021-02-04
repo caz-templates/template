@@ -9,5 +9,4 @@
 - github: <%= '\<%= github %\>' %>
 - features: <%= '\<%= features %\>' %>
 - year: <%= '\<%= year %\>' %>
-- upper: <%= '\<%= upper(name) %\>' %>
-<% } %>
+- upper: <%= '\<%= upper(name) %\>' %><% } %>

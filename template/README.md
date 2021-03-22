@@ -12,7 +12,7 @@
 Prerequisites: [Node.js](https://nodejs.org) (>= 10.12, 14.16 preferred), [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.20) and [Git](https://git-scm.com).
 
 ```shell
-# create <%= name %> apps through this
+# create <%= name %> apps by this template
 $ npx caz <%= name %> my-<%= name %>
 
 # enter generated directory
@@ -28,7 +28,7 @@ Or use globally installed CAZ:
 # Install the `caz` globally
 $ npm install caz --global # or `yarn global add caz`
 
-# create <%= name %> apps through this
+# create <%= name %> apps by this template
 $ caz <%= name %> my-<%= name %>
 
 # enter generated directory

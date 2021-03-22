@@ -17,7 +17,7 @@
     "test": "standard --fix && jest"
   },
   "jest": {
-    "testTimeout": 30000,
+    "testTimeout": 20000,
     "modulePathIgnorePatterns": [
       "<rootDir>/template"
     ]

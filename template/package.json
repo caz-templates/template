@@ -17,7 +17,7 @@
     "test": "standard --fix<%= features.includes('test') ? ' && jest' : '' %>"
   },<% if (features.includes('test')) { %>
   "jest": {
-    "testTimeout": 30000,
+    "testTimeout": 20000,
     "modulePathIgnorePatterns": [
       "<rootDir>/template"
     ]

@@ -12,7 +12,7 @@
 Prerequisites: [Node.js](https://nodejs.org) (>= 10.12, 14.16 preferred), [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.20) and [Git](https://git-scm.com).
 
 ```shell
-# create templates through this
+# create templates by this template
 $ npx caz template my-template
 
 # enter generated directory
@@ -28,7 +28,7 @@ Or use globally installed CAZ:
 # Install the `caz` globally
 $ npm install caz --global # or `yarn global add caz`
 
-# create templates through this
+# create templates by this template
 $ caz template my-template
 
 # enter generated directory

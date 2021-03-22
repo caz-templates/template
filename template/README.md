@@ -9,7 +9,7 @@
 
 ## Usage
 
-Prerequisites: [Node.js](https://nodejs.org) (>= 10.17, 12.10 preferred), [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.20) and [Git](https://git-scm.com).
+Prerequisites: [Node.js](https://nodejs.org) (>= 10.12, 14.16 preferred), [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.20) and [Git](https://git-scm.com).
 
 ```shell
 # create <%= name %> apps through this
@@ -37,6 +37,10 @@ $ cd my-<%= name %>
 # running test if you choose test features
 $ npm test # or `yarn test`
 ```
+
+## Related
+
+- [zce/caz](https://github.com/zce/caz) - A simple yet powerful template-based Scaffolding tools.
 
 ## Contributing
 

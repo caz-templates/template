@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {<% if (features.includes('test')) { %>
-    "caz": "0.2.1",
+    "caz": "0.5.1",
     "jest": "26.6.3",<% } %>
     "standard": "16.0.3"
   }

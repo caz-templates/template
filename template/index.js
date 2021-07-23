@@ -61,8 +61,8 @@ module.exports = {
       message: 'Choose the features you need',
       instructions: false,
       choices: [
-        { title: 'Foo', value: 'foo' },
-        { title: 'Bar', value: 'bar', selected: true }
+        { title: 'Automatic test', value: 'test', selected: true },
+        { title: 'Foo', value: 'foo' }
       ]
     },
     {

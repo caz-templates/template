@@ -60,7 +60,7 @@ $ npm test # or `yarn test`
 <% if (features.includes('test')) { %>
 [travis-img]: https://img.shields.io/travis/com/<%= github %>/<%= name %>
 [travis-url]: https://travis-ci.com/<%= github %>/<%= name %><% } %>
-[dependency-img]: https://img.shields.io/librariesio/release/github/<%= github %>/<%= name %>
+[dependency-img]: https://img.shields.io/librariesio/github/<%= github %>/<%= name %>
 [dependency-url]: https://github.com/<%= github %>/<%= name %>
 [style-img]: https://img.shields.io/badge/code_style-standard-brightgreen
 [style-url]: https://standardjs.com

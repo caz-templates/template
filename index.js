@@ -71,7 +71,6 @@ module.exports = {
         { title: 'Custom prepare hook', value: 'prepare' },
         { title: 'Custom emit hook', value: 'emit' },
         { title: 'Custom complete', value: 'complete', selected: true },
-        { title: 'Additional docs', value: 'docs' },
         { title: 'Automatic test', value: 'test', selected: true }
       ]
     },
@@ -98,16 +97,14 @@ module.exports = {
       hint: ' ',
       choices: [
         { title: 'npm', value: 'npm' },
-        { title: 'yarn', value: 'yarn' },
-        { title: 'pnpm', value: 'pnpm' }
+        { title: 'pnpm', value: 'pnpm' },
+        { title: 'yarn', value: 'yarn' }
       ]
     }
   ],
   filters: {
     /** @param {{ features: string[] }} answers */
-    'docs/**': answers => answers.features.includes('docs'),
-    /** @param {{ features: string[] }} answers */
-    'test/**': answers => answers.features.includes('test'),
+    'index.test.js': answers => answers.features.includes('test'),
     /** @param {{ features: string[] }} answers */
     '.travis.yml': answers => answers.features.includes('test')
   },
@@ -123,7 +120,7 @@ module.exports = {
       console.log(`  $ cd ${path.relative(process.cwd(), ctx.dest)}`)
     }
     if (ctx.config.install === false) {
-      console.log(`  $ npm install # or yarn`)
+      console.log('  $ npm install')
     }
     console.log(`  $ ${ctx.config.install ? ctx.config.install : 'npm'} test`)
     console.log('\nHappy hacking :)\n')

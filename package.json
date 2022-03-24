@@ -38,14 +38,9 @@
       "template"
     ]
   },
-  "dependencies": {
-    "caz": "0.8.0",
-    "jest": "27.2.1",
-    "standard": "16.0.3"
-  },
   "devDependencies": {
-    "caz": "0.8.0",
-    "jest": "27.2.1",
-    "standard": "16.0.3"
+    "caz": "1.0.0-alpha.1",
+    "jest": "27.5.1",
+    "standard": "16.0.4"
   }
 }

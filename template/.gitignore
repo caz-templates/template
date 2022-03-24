@@ -1,5 +1,6 @@
 .DS_Store<% if (features.includes('test')) { %>
-dist<% } %>
+temp<% } %>
 node_modules
 package-lock.json
+pnpm-lock.yaml
 yarn.lock

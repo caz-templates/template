@@ -113,6 +113,7 @@ module.exports = {
     ctx.config.install = ctx.answers.install && ctx.answers.pm
   },
   complete: async ctx => {
+    const client = ctx.config.install ? ctx.config.install : 'npm'
     console.clear()
     console.log(`Created a new project in ${ctx.project} by the ${ctx.template} template.\n`)
     console.log('Getting Started:')
@@ -120,9 +121,9 @@ module.exports = {
       console.log(`  $ cd ${path.relative(process.cwd(), ctx.dest)}`)
     }
     if (ctx.config.install === false) {
-      console.log('  $ npm install')
+      console.log(`  $ ${client} install`)
     }
-    console.log(`  $ ${ctx.config.install ? ctx.config.install : 'npm'} test`)
+    console.log(`  $ ${client} test`)
     console.log('\nHappy hacking :)\n')
   }
 }

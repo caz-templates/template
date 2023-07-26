@@ -24,7 +24,7 @@ const assertGenerated = async (input, output) => {
   await caz(template, project, { force: true })
   for (const item of output) {
     const exists = fs.existsSync(path.join(project, item))
-    assert.strictEqual(exists, true, `Expected ${item} to exist.`)
+    assert.strictEqual(exists, true, `Expected <%= '${item}' %> to exist.`)
   }
 }
 

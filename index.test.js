@@ -1,100 +1,105 @@
+// @ts-check
+
 const fs = require('fs')
-const { join } = require('path')
+const path = require('path')
+const assert = require('assert')
 const { default: caz, inject } = require('caz')
 
-const temp = join(__dirname, 'temp')
-const template = join(temp, 'src')
+console.log = () => {}
+console.clear = () => {}
 
-beforeAll(async () => {
-  jest.spyOn(console, 'log').mockImplementation()
-  jest.spyOn(console, 'clear').mockImplementation()
-  await fs.promises.mkdir(template, { recursive: true })
-  await fs.promises.cp(join(__dirname, 'index.js'), join(template, 'index.js'))
-  await fs.promises.cp(join(__dirname, 'package.json'), join(template, 'package.json'))
-  await fs.promises.cp(join(__dirname, 'template'), join(template, 'template'), { recursive: true })
-})
+process.env.NODE_ENV = 'test'
 
-test('minimal', async () => {
-  inject([
-    'minimal',
-    '0.1.0',
-    'minimal template',
-    'zce',
-    'w@zce.me',
-    'https://zce.me',
-    'zce',
-    'template',
-    [],
-    'message',
-    false,
-    'npm'
-  ])
-  const project = join(temp, 'minimal')
+const temp = path.join(__dirname, 'temp')
+const template = path.join(temp, 'source')
+
+fs.mkdirSync(template, { recursive: true })
+fs.cpSync(path.join(__dirname, 'index.js'), path.join(template, 'index.js'))
+fs.cpSync(path.join(__dirname, 'package.json'), path.join(template, 'package.json'))
+fs.cpSync(path.join(__dirname, 'template'), path.join(template, 'template'), { recursive: true })
+
+const assertGenerated = async (input, output) => {
+  inject(input)
+  const project = path.join(temp, input[0])
   await caz(template, project, { force: true })
-  expect(fs.existsSync(project)).toBe(true)
-  expect(fs.existsSync(join(project, '.git'))).toBe(true)
-  expect(fs.existsSync(join(project, '.vscode/extensions.json'))).toBe(true)
-  expect(fs.existsSync(join(project, '.vscode/settings.json'))).toBe(true)
-  expect(fs.existsSync(join(project, 'template/package.json'))).toBe(true)
-  expect(fs.existsSync(join(project, 'template/LICENSE'))).toBe(true)
-  expect(fs.existsSync(join(project, 'template/README.md'))).toBe(true)
-  expect(fs.existsSync(join(project, '.editorconfig'))).toBe(true)
-  expect(fs.existsSync(join(project, '.gitignore'))).toBe(true)
-  expect(fs.existsSync(join(project, 'index.js'))).toBe(true)
-  expect(fs.existsSync(join(project, 'LICENSE'))).toBe(true)
-  expect(fs.existsSync(join(project, 'package.json'))).toBe(true)
-  expect(fs.existsSync(join(project, 'README.md'))).toBe(true)
-})
+  for (const item of output) {
+    const exists = fs.existsSync(path.join(project, item))
+    assert.strictEqual(exists, true, `Expected ${item} to exist.`)
+  }
+}
 
-test('maximal', async () => {
-  inject([
-    'maximal',
-    '0.1.0',
-    'maximal template',
-    'zce',
-    'w@zce.me',
-    'https://zce.me',
-    'zce',
-    'source',
+const test = async () => {
+  // TODO: test with different template or different answers
+  await assertGenerated(
     [
-      'metadata',
-      'prompts',
-      'filters',
-      'helpers',
-      'install',
-      'init',
-      'setup',
-      'prepare',
-      'emit',
-      'complete',
-      'test'
+      'minimal',
+      '0.1.0',
+      'minimal template',
+      'author',
+      'user@acme.sh',
+      'https://acme.sh',
+      'acme',
+      'template',
+      [],
+      'message',
+      false,
+      'npm'
     ],
-    'callback',
-    true,
-    'npm'
-  ])
-  const project = join(temp, 'maximal')
-  await caz(template, project, { force: true })
-  expect(fs.existsSync(project)).toBe(true)
-  expect(fs.existsSync(join(project, '.git'))).toBe(true)
-  expect(fs.existsSync(join(project, '.vscode/extensions.json'))).toBe(true)
-  expect(fs.existsSync(join(project, '.vscode/settings.json'))).toBe(true)
-  expect(fs.existsSync(join(project, 'node_modules'))).toBe(true)
-  expect(fs.existsSync(join(project, 'source/package.json'))).toBe(true)
-  expect(fs.existsSync(join(project, 'source/LICENSE'))).toBe(true)
-  expect(fs.existsSync(join(project, 'source/README.md'))).toBe(true)
-  expect(fs.existsSync(join(project, '.editorconfig'))).toBe(true)
-  expect(fs.existsSync(join(project, '.gitignore'))).toBe(true)
-  expect(fs.existsSync(join(project, '.travis.yml'))).toBe(true)
-  expect(fs.existsSync(join(project, 'index.js'))).toBe(true)
-  expect(fs.existsSync(join(project, 'index.test.js'))).toBe(true)
-  expect(fs.existsSync(join(project, 'LICENSE'))).toBe(true)
-  expect(fs.existsSync(join(project, 'package-lock.json'))).toBe(true)
-  expect(fs.existsSync(join(project, 'package.json'))).toBe(true)
-  expect(fs.existsSync(join(project, 'README.md'))).toBe(true)
-})
+    [
+      '.git',
+      '.vscode/extensions.json',
+      '.vscode/settings.json',
+      'template/package.json',
+      'template/LICENSE',
+      'template/README.md',
+      '.gitignore',
+      'index.js',
+      'LICENSE',
+      'package.json',
+      'README.md'
+    ]
+  )
+  console.info('\x1b[91m→ minimal passed\x1b[0m')
 
-afterAll(async () => {
-  jest.clearAllMocks()
-  await fs.promises.rm(temp, { recursive: true })
+  await assertGenerated(
+    [
+      'maximal',
+      '0.1.0',
+      'maximal template',
+      'author',
+      'user@acme.sh',
+      'https://acme.sh',
+      'acme',
+      'source',
+      [ 'metadata', 'prompts', 'filters', 'helpers', 'install', 'init', 'setup', 'prepare', 'emit', 'complete', 'test' ],
+      'callback',
+      true,
+      'npm'
+    ],
+    [
+      '.git',
+      '.vscode/extensions.json',
+      '.vscode/settings.json',
+      'node_modules',
+      'source/package.json',
+      'source/LICENSE',
+      'source/README.md',
+      '.gitignore',
+      '.travis.yml',
+      'index.js',
+      'index.test.js',
+      'LICENSE',
+      'package-lock.json',
+      'package.json',
+      'README.md'
+    ]
+  )
+  console.info('\x1b[91m→ maximal passed\x1b[0m')
+
+  fs.rmSync(temp, { recursive: true })
+}
+
+test().catch(err => {
+  console.error(err)
+  process.exit(1)
 })

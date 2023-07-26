@@ -11,16 +11,10 @@
   ],
   "repository": "<%= github %>/<%= name %>",
   "license": "MIT",
-  "author": "<%= author %> <<%= email %>> (<%= url %>)",
+  "author": "<%= author %> <<%= email %>> (<%= url %>)"<% if (features.includes('test')) { %>,
   "scripts": {
-    "test": "standard --fix<%= features.includes('test') ? ' && jest' : '' %>"
-  },<% if (features.includes('test')) { %>
-  "jest": {
-    "testTimeout": 20000,
-    "modulePathIgnorePatterns": [
-      "<rootDir>/template"
-    ]
-  },<% } %>
+    "test": "node index.test.js"
+  }<% } %>,
   "renovate": {
     "extends": [
       "zce"
@@ -29,17 +23,12 @@
       "template"
     ]
   },
-  "standard": {<% if (features.includes('test')) { %>
-    "env": [
-      "jest"
-    ],<% } %>
+  "standard": {
     "ignore": [
       "<%= source %>"
     ]
-  },
-  "devDependencies": {<% if (features.includes('test')) { %>
-    "caz": "1.1.0",
-    "jest": "29.2.2",<% } %>
-    "standard": "17.0.0"
-  }
+  }<% if (features.includes('test')) { %>,
+  "devDependencies": {
+    "caz": "^2.0.0"
+  }<% } %>
 }

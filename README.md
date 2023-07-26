@@ -8,7 +8,7 @@
 
 ## Usage
 
-Prerequisites: [Node.js](https://nodejs.org) (>= 14.14 required, >= 16.13 preferred), [npm](https://www.npmjs.com) (>= 7.x) or [yarn](https://yarnpkg.com) (>= 1.22) and [Git](https://git-scm.com).
+Prerequisites: [Node.js](https://nodejs.org) (>= 16.x required, >= 18.x preferred), [npm](https://www.npmjs.com) (>= 7.x) and [Git](https://git-scm.com).
 
 ```shell
 # create templates by this template
